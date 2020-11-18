@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container my-2">
+    <h1>Add an employee</h1>
+        <form action="#" th:action="@{/addemployee}" th:object="${employee}" method="post">
+
+            <label for="employeeId">Employee ID</label>
+            <input class="form-control" type="text" th:field="*{employeeId}" id="employeeId" placeholder="Employee ID">
+            <span th:if="${#fields.hasErrors('employeeId')}" th:errors="*{employeeId}"></span><br>
+
+
+            <label for="firstName">First Name</label>
+            <input class="form-control" type="text" th:field="*{firstName}" id="firstName" placeholder="First Name">
+            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br>
+
+            <label for="lastName">Last Name</label>
+            <input class="form-control" type="text" th:field="*{lastName}" id="lastName" placeholder="Last Name">
+            <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br>
+
+            <label for="email">Email</label>
+            <input class="form-control" type="text" th:field="*{email}" id="email" placeholder="Email">
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span><br>
+
+            <label for="nic">NIC</label>
+            <input class="form-control" type="text" th:field="*{nic}" id="nic" placeholder="NIC">
+            <span th:if="${#fields.hasErrors('nic')}" th:errors="*{nic}"></span><br>
+
+            <label for="experience">Experience (Years)</label>
+            <input class="form-control" type="text" th:field="*{experience}" id="experience" placeholder="Experience">
+            <span th:if="${#fields.hasErrors('experience')}" th:errors="*{experience}"></span><br>
+
+
+            <label for="departmentId">Department ID</label>
+            <input class="form-control" type="text" th:field="*{departmentId}" id="departmentId" placeholder="Department ID">
+            <span th:if="${#fields.hasErrors('departmentId')}" th:errors="*{departmentId}"></span><br>
+
+            <label for="sbuId">Sbu ID</label>
+            <input class="form-control" type="text" th:field="*{sbuId}" id="sbuId" placeholder="Sbu ID">
+            <span th:if="${#fields.hasErrors('sbuId')}" th:errors="*{sbuId}"></span><br>
+
+            <input type="submit" value="Add Employee" class="btn btn-primary btn-sm mb-3">
+        </form>
+</div>
+</body>
+</html>
